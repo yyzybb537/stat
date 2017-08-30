@@ -84,9 +84,9 @@ func (this *DelayStat) ToString(values Values) string {
 	for _, v := range values {
 		buf.WriteString(", ")
 		if v.T != maxDuration {
-			buf.WriteString(fmt.Sprintf("<%s:%d(%d%%)", v.T.String(), v.V, v.V * 100 / all))
+			buf.WriteString(fmt.Sprintf("<%s:%d(%d%%)", v.T.String(), v.V, v.V * 100 / (all + 1)))
 		} else {
-			buf.WriteString(fmt.Sprintf("Others:%d(%d%%)", v.V, v.V * 100 / all))
+			buf.WriteString(fmt.Sprintf("Others:%d(%d%%)", v.V, v.V * 100 / (all + 1)))
         }
 	}
 	return buf.String()
