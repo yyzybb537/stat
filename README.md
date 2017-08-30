@@ -1,0 +1,2 @@
+# stat
+Golang statistics library
