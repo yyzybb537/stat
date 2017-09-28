@@ -9,6 +9,8 @@ import (
 var displaying int
 
 func Printf(format string, a ... interface{}) {
+	fmt.Printf(strings.Repeat("\b", displaying) + strings.Repeat(" ", displaying))
+	os.Stdout.Sync()
 	info := fmt.Sprintf(format, a...) + " "
 	fmt.Printf(strings.Repeat("\b", displaying) + info)
 	os.Stdout.Sync()
